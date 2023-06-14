@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backtesting Framework</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <button id="main-menu-button">Main Menu</button>
+    <div>Chart Settings...</div>
+    <button id="trade-button">Trade</button>
+  </div>
+
+  <div id="main-menu" style="display: none;">
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Metrics/Datalab</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </div>
+
+
+  <div class="main">
+    <div class="chart-container">
+      <div id="chart" class="chart"></div>
+    </div>
+    <div class="order-history">
+      Order History / Open Positions
+    </div>
+  </div>
+
+  <div id="trade-window" style="display: none; position: absolute; width: 200px; height: 300px; background-color: white; padding: 10px;">
+    <h2>Place Trade</h2>
+    <form id="trade-form">
+      <label>
+        Lot Size:
+        <input type="number" name="lot-size" step="0.01" min="0.01" required>
+      </label>
+      <label>
+        Cash Risk:
+        <input type="number" name="cash-risk" step="0.01" min="0.01" required>
+      </label>
+      <label>
+        Account Risk (%):
+        <input type="number" name="account-risk" step="0.01" min="0.01" max="100" required>
+      </label>
+      <button type="submit">Place Trade</button>
+    </form>
+  </div>
+
+  <script src="node_modules/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
