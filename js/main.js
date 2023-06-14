@@ -3,15 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
   var mainMenu = document.getElementById("main-menu");
   var isMainMenuVisible = false;
 
-  mainMenuButton.addEventListener("click", function() {
-    if (isMainMenuVisible) {
-      mainMenu.style.display = "none";
-      isMainMenuVisible = false;
-    } else {
-      mainMenu.style.display = "block";
-      isMainMenuVisible = true;
-    }
-  });
+  $(document).ready(function() {
+    $("#main-menu-button").click(function() {
+        $("#main-menu").toggle();
+    });
+});
 
   // Get a reference to the chart container
   var chartContainer = document.getElementById("chart");
