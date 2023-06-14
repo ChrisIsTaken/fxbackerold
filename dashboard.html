@@ -8,6 +8,32 @@
 </head>
 <body>
     <h1>Dashboard</h1>
-    <!-- Dashboard content goes here -->
+    <div class="dashboard-container">
+        <div class="session-management">
+            <h2>Trading Sessions</h2>
+            <button id="add-session-button">+</button>
+            <div id="new-session-form" style="display: none;">
+                <h3>New Session</h3>
+                <form>
+                <!-- Add form fields for the session details here -->
+                <button type="submit">Create Session</button>
+                </form>
+            </div>
+            <!-- Session list goes here -->
+        </div>
+        <div class="account-management">
+            <h2>Account Management</h2>
+            <button id="add-account-button">+</button>
+            <div id="new-account-form" style="display: none;">
+                <h3>New Account</h3>
+                <form>
+                <!-- Add form fields for the account details here -->
+                <button type="submit">Create Account</button>
+                </form>
+            </div>
+            <!-- Account list goes here -->
+        </div>
+    </div>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
