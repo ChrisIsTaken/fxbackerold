@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
     <h1>Dashboard</h1>
@@ -12,11 +13,34 @@
         <div class="session-management">
             <h2>Trading Sessions</h2>
             <button id="add-session-button">+</button>
-            <div id="new-session-form" style="display: none;">
-                <h3>New Session</h3>
+            <div id="new-session-modal" title="New Session" style="display: none;">
                 <form>
-                <!-- Add form fields for the session details here -->
-                <button type="submit">Create Session</button>
+                    <label>
+                        Symbol:
+                        <select name="symbol">
+                            <!-- Add options for each symbol here -->
+                        </select>
+                    </label>
+                    <label>
+                        Start Date:
+                        <input type="date" name="start-date" required>
+                    </label>
+                    <label>
+                        Accounts:
+                        <!-- Add a checkbox for each account here -->
+                    </label>
+                    <label>
+                        Name:
+                        <input type="text" name="name">
+                    </label>
+                    <label>
+                        Strategy:
+                        <input type="text" name="strategy">
+                    </label>
+                    <label>
+                        Description:
+                        <textarea name="description"></textarea>
+                    </label>
                 </form>
             </div>
             <!-- Session list goes here -->
@@ -24,16 +48,23 @@
         <div class="account-management">
             <h2>Account Management</h2>
             <button id="add-account-button">+</button>
-            <div id="new-account-form" style="display: none;">
-                <h3>New Account</h3>
+            <div id="new-account-modal" title="New Account" style="display: none;">
                 <form>
-                <!-- Add form fields for the account details here -->
-                <button type="submit">Create Account</button>
+                    <label>
+                        Account Name:
+                        <input type="text" name="account-name" required>
+                    </label>
+                    <label>
+                        Initial Balance:
+                        <input type="number" name="initial-balance" step="0.01" min="0.01" required>
+                    </label>
                 </form>
             </div>
             <!-- Account list goes here -->
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 </html>
